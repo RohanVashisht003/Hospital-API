@@ -1,5 +1,5 @@
 const Doctor = require('../models/doctor');
-
+const jwt = require('jsonwebtoken')
 
 
 module.exports.signUp = async (req, res)=>{
@@ -33,7 +33,9 @@ module.exports.createSession = async (req, res)=>{
             });
         }
         
-        let token = doctor.getJwtToken();
+        let token = jwt.sign({_id:doctor._id},'hospital',{
+            expiresIn: '100000'
+        })
 
         return res.status(200).json({
             success: true,

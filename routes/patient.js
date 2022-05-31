@@ -1,5 +1,4 @@
 const express = require('express');
-const { checkAuth } = require('../config/auth');
 const router = express.Router();
 const passport = require('../config/passport-jwt-strategy');
 

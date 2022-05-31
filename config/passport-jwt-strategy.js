@@ -12,7 +12,7 @@ let opts = {
 console.log("Inside passport")
 passport.use(
     new JWTStrategy(opts, function(jwtPayLoad, done){
-         Doctor.findById(jwtPayLoad.id,(err,user)=>{
+         Doctor.findById(jwtPayLoad._id,(err,user)=>{
             if(err){
                 console.log("Error in finding the doctor from JWT");
                 return done(err,null);
