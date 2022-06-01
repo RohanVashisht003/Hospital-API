@@ -1,6 +1,6 @@
-const mongoose = require('../config/mongoose');
+const mongoose = require('mongoose');
 
-const patientSchema = new mongoose.create({
+const patientSchema = new mongoose.Schema({
     name:{
         type: String,
         required : true
@@ -12,7 +12,7 @@ const patientSchema = new mongoose.create({
     },
     reports:[
         {
-            type: mongoose.Schema.Type.ObjectId,
+            type: mongoose.Schema.ObjectId,
             ref: "Report"
         }
     ]
