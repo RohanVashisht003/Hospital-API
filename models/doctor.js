@@ -1,6 +1,5 @@
 const mongoose = require('mongoose');
 
-
 const doctorSchema = new mongoose.Schema({
     name:{
         type: String,
@@ -15,10 +14,10 @@ const doctorSchema = new mongoose.Schema({
         type: String,
         required: true
     }
-},{
+},
+{
     timestamps: true
 });
-
 
 const Doctor = mongoose.model('Doctor', doctorSchema);
 
