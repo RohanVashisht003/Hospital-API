@@ -17,6 +17,7 @@ module.exports.signUp = async (req, res)=>{
         })
    }
    catch(err){
+       console.log(err)
         return res.status(500).json({
             message: "Internal Server Error"
         })
@@ -27,7 +28,8 @@ module.exports.signUp = async (req, res)=>{
 module.exports.createSession = async (req, res)=>{
     try{
         let doctor = await Doctor.findOne({email:req.body.email});
-        if(!doctor || doctor.password != req.body.password){
+        let storedPassword = await doctor.comparePassword(req.body.password);
+        if(!doctor || !storedPassword){
             return res.status(422).json({
                 message: "Invalid username and password",
             });

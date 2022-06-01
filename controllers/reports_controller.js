@@ -21,7 +21,7 @@ try{
         let patient = {};
         patient.name = reports[i].patient.name;
         patient.phone = reports[i].patient.phone_no;
-        patient.date = reports[i].date
+        patient.date = reports[i].createdAt,
         report.push({
             doctor: reports[i].doctor.name,
             patient:patient

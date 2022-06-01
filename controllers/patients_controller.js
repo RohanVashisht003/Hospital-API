@@ -75,7 +75,7 @@ module.exports.showReports = async (req, res) => {
             processedData.reports.push({
                 doctor: patient.reports[i].doctor.name,
                 status: patient.reports[i].status,
-                date: patient.reports[i].date
+                date: patient.reports[i].createdAt
             })
         }
 

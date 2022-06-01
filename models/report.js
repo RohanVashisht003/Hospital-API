@@ -9,15 +9,11 @@ const ReportSchema = new mongoose.Schema({
         type: mongoose.Schema.ObjectId,
         ref: "Patient"
     },
-    date: {
-        type: Date,
-        default: Date.now
-    },
     doctor: {
         type: mongoose.Schema.ObjectId,
         ref: "Doctor"
     }
-});
+},{timestamps:true});
 
 const Report = mongoose.model('Report', ReportSchema);
 
