@@ -1,16 +1,17 @@
 const mongoose = require('mongoose');
 
 // connect to db
-mongoose.connect('mongodb://localhost/hospital_db');
+// mongoose.connect('mongodb://localhost/hospital_db');
+mongoose.connect('mongodb+srv://rohan003:123@hospitalapi003.a6lwjj7.mongodb.net/hospitalApi003?retryWrites=true&w=majority')
 
 // acquire the connection to check if it is successful or not
 const db = mongoose.connection;
 
 // if error
-db.on('error',console.error.bind(console, "Error in connecting to db"));
+db.on('error', console.error.bind(console, "Error in connecting to db"));
 
 // if successfully working
-db.once('open', ()=>{
+db.once('open', () => {
     console.log("Successfully connected to db");
 })
 
