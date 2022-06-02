@@ -2,7 +2,7 @@ const mongoose = require('mongoose');
 
 // connect to db
 // mongoose.connect('mongodb://localhost/hospital_db');
-mongoose.connect('mongodb+srv://rohan003:123@hospitalapi003.a6lwjj7.mongodb.net/hospitalApi003?retryWrites=true&w=majority')
+mongoose.connect('mongodb+srv://rohan003:123@hospitalapi003.a6lwjj7.mongodb.net/hospitalApi003?retryWrites=true&w=majority',{useNewUrlParser:true, useUnifiedTopology:true})
 
 // acquire the connection to check if it is successful or not
 const db = mongoose.connection;
