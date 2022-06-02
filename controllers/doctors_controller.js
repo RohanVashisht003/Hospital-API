@@ -36,7 +36,7 @@ module.exports.createSession = async (req, res)=>{
         }
         
         let token = jwt.sign({_id:doctor._id},'hospital',{
-            expiresIn: '24h'
+            expiresIn: '5m'
         })
 
         return res.status(200).json({
