@@ -10,6 +10,7 @@ An API for the doctors of a Hospital which has been allocated by the govt for te
 
 
 **Routes**
+#### Url start with:- https://hospital003.herokuapp.com/
 1. Register a Doctor: [POST]-  /doctors/register -> with username and password
 2. Login for Doctor: [POST]-  /doctors/login -> returns the JWT to be used
 3. Register a patient:  [POST]-  /patients/register -> with name and phone_no
